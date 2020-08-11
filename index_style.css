@@ -28,7 +28,7 @@ a:hover{
 }
 
 .box{
-	background: white;
+	background: whitesmoke;
 	height: 250px;
 	width: 250px;
 	resize: both;
@@ -61,4 +61,9 @@ a:hover{
 	grid-template-columns: repeat(auto-fit, minmax(200px,1fr) ) ;
 	justify-items: center ;
 	align-items: center;
+}
+.a-button{
+	background: lightgray;
+	height: 30px;
+	width: 50px;
 }
