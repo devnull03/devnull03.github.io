@@ -4,39 +4,10 @@ body{
     font-family: 'Cascadia code';
 }
 
-main{
-    display: grid;
-    justify-content: center;
-    align-items: center;   
-}
-.timerDiv{
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    width: 500px;
-    transform: translate(-50%, -50%);
-    display: grid;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-}
-.timer{
-    justify-content: center;
-    text-align: center;
-    border: 2px solid white;
-    border-radius: 400px;
-    padding: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
-    font-size: 30px;
+$topLoc : 30%;
 
-    box-shadow: 0 5px 20px rgba(61, 61, 61, 0.5);
-	transition: transform 300ms, box-shadow 300ms ;
-}
-
-.wpmDiv{
+%baseDiv {
     position: absolute;
-    top: 55%;
     left: 50%;
     width: 500px;
     transform: translate(-50%, -50%);
@@ -46,7 +17,7 @@ main{
     align-items: center;
 }
 
-.wpmText {
+%base-thing {
     justify-content: center;
     text-align: center;
     border: 2px solid white;
@@ -59,24 +30,59 @@ main{
 	transition: transform 300ms, box-shadow 300ms ; 
 }
 
+main{
+    display: grid;
+    justify-content: center;
+    align-items: center;   
+}
+.timerDiv{
+    @extend %baseDiv;
+    top: $topLoc;
+}
+.timer{
+    @extend %base-thing;
+    font-size: 30px;
+}
+
+.wpmDiv{
+    @extend %baseDiv;
+    top: $topLoc + 30;
+}
+
+.wpmText {
+    @extend %base-thing;
+}
+
+.test {
+    @extend %base-thing;
+    min-width: 300px;
+}
+.testDiv {
+    @extend %baseDiv;
+    top: $topLoc + 15;
+}
+
+
 input{
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 65%;
     left: 50%;
-    width: 15%;
-    background-color: rgb(231, 229, 229);
     display: inline-block;
     border: none;
     outline: none;
     box-sizing: border-box;
+    
     font-weight: lighter;
     font-family: 'Cascadia code';
+
+    top: $topLoc + 40;
+
+    width: 15%;
+    background-color: rgb(231, 229, 229);
 }
 
 .commentDiv {
     display: grid;
-    /* justify-content: center; */
     text-align: center;
     position: absolute;
     transform: translate(-50%, -50%);
