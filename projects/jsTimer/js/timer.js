@@ -35,7 +35,6 @@ document.addEventListener('keyup', event => {
     }    
 })
 
-
 function roundTheNumber(number) {
     return (number).toString().split(".")[0];
 }
@@ -67,6 +66,12 @@ function generateWords() {
     for (let i = 0; i < words; i++) {
         randomStr = randomStr.concat(data["words"][Math.floor(Math.random() * 999)]) + " ";
     };
+    if (words >= 40) {
+        document.getElementById("testDiv").style.width = "700px";
+    } else if (words >= 70) {
+        document.getElementById("testDiv").style.width = "90%";
+    } 
+
     if (words > 0) {
         document.getElementById("testDiv").innerHTML = wordsElement;
         document.getElementById("test").innerHTML = randomStr;
