@@ -14,6 +14,8 @@ document.addEventListener('keyup', event => {
     } else if (event.code === 'KeyR') {
         document.getElementById("wpm").innerHTML = "? WPM";
         document.getElementById("timer").innerHTML = "this is the timer";
+        seconds = 0;
+        started = false;
     }
 })
 
