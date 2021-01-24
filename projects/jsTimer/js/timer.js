@@ -3,13 +3,15 @@ var seconds = 0;
 var started = false;
 var wordsElement = "<p class=\"test\" id=\"test\"></p>";
 
-// document.getElementById("words")
-//     .addEventListener("keyup", function (event) {
-//     if (event.code === "Enter") {
-//         event.preventDefault();
-//         console.log("pressed")
-//     }
-// });
+function load() {
+    document.getElementById("words")
+        .addEventListener("keyup", function (event) {
+            if (event.code === "Enter") {
+                event.preventDefault();
+                generateWords();
+            }
+    })
+}
 
 document.addEventListener('keyup', event => {
     if (!(document.activeElement.nodeName == "INPUT")) {
