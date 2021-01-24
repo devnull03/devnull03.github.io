@@ -1,7 +1,7 @@
 
 var seconds = 0;
 var started = false;
-var wordsElement = "<p class=\"test\" id=\"test\"></p>";
+var wordsElement = "<p class=\"generatedWords\" id=\"generatedWords\"></p>";
 
 function load() {
     document.getElementById("words")
@@ -34,7 +34,7 @@ function start() {
         seconds = 0;
         startButton.innerHTML = "Start";
     }
-    if (document.getElementById("testDiv").innerHTML === "") {
+    if (document.getElementById("generatedWordsDiv").innerHTML === "") {
         generateWords();
     }
 }
@@ -43,7 +43,7 @@ function reset() {
     document.getElementById("timer").innerHTML = "this is the timer";
     seconds = 0;
     started = false;
-    document.getElementById("testDiv").innerHTML = "";
+    document.getElementById("generatedWords").innerHTML = "";
 }
 
 
@@ -78,13 +78,13 @@ function generateWords() {
         randomStr = randomStr.concat(data["words"][Math.floor(Math.random() * 999)]) + " ";
     };
     if (words >= 40) {
-        document.getElementById("testDiv").style.width = "70%";
+        document.getElementById("generatedWordsDiv").style.width = "70%";
     } else if (words >= 70) {
-        document.getElementById("testDiv").style.width = "90%";
+        document.getElementById("generatedWordsDiv").style.width = "90%";
     } 
 
     if (words > 0) {
-        document.getElementById("testDiv").innerHTML = wordsElement;
-        document.getElementById("test").innerHTML = randomStr;
+        // document.getElementById("generatedWordsDiv").innerHTML = wordsElement;
+        document.getElementById("generatedWords").innerHTML = randomStr;
     }
 }

@@ -13,20 +13,18 @@ main {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  column-gap: 20px;
 }
 
-div[id=generate], .mobile, .testDiv, .wpmDiv, .timerDiv {
-  position: absolute;
-  left: 50%;
+.timerDiv {
   width: 500px;
-  transform: translate(-50%, -50%);
   display: grid;
   gap: 15px;
   justify-content: center;
   align-items: center;
 }
 
-.mobileButtons, .test, .wpmText, .timer {
+.mobileButtons, .wpmText, .timer {
   justify-content: center;
   text-align: center;
   border: 2px solid white;
@@ -38,40 +36,45 @@ div[id=generate], .mobile, .testDiv, .wpmDiv, .timerDiv {
   transition: transform 300ms, box-shadow 300ms;
 }
 
-main {
-  display: grid;
-  justify-content: center;
+.flow {
+  display: flex;
+  align-self: center;
+  justify-items: center;
   align-items: center;
+  flex-direction: column;
+  margin-top: 10%;
 }
 
 .timerDiv {
-  top: 30%;
+  top: 10%;
 }
 
 .timer {
   font-size: 30px;
 }
 
-.wpmDiv {
-  top: 60%;
+.generatedWords {
+  font-weight: 320;
+  font-size: 19px;
+  color: #474747;
 }
 
-.testDiv {
-  top: 45%;
+.generatedWordsDiv {
+  text-align: center;
+}
+
+.inputBox {
+  justify-items: center;
+  padding: 15px;
 }
 
 input {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
   display: inline-block;
   border: none;
   outline: none;
   box-sizing: border-box;
   font-weight: lighter;
   font-family: "Cascadia code";
-  top: 70%;
-  width: 15%;
   background-color: #e7e5e5;
 }
 
@@ -85,12 +88,23 @@ input {
   color: #9e9898;
 }
 
+.moblieTop {
+  display: flex;
+  flex-direction: column;
+}
+
 .mobile {
   display: none;
 }
 
 div[id=generate] {
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: none;
+}
+
+.mobileButtons {
+  margin: 10px;
 }
 
 @media only screen and (max-device-width: 480px) {
@@ -101,31 +115,15 @@ div[id=generate] {
   .mobile {
     display: flex;
     flex-direction: row;
-    top: 75%;
+    row-gap: 50px;
   }
 
-  .timerDiv {
-    top: 10%;
-  }
-
-  .wpmDiv {
-    top: 48%;
-  }
-
-  .testDiv {
-    top: 30%;
-    width: 90%;
-  }
-
-  input {
-    top: 57%;
-    width: 30%;
+  .flow {
+    margin-top: 15%;
   }
 
   div[id=generate] {
-    display: grid;
-    top: 66%;
-    width: 20%;
+    display: inline-block;
   }
 }
 

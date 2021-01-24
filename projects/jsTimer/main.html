@@ -21,28 +21,38 @@
     <script type="text/javascript" src="js/words.js"></script>
     <script type="text/javascript" src="js/timer.js"></script>
     <main>
-        <div class="timerDiv" >
-            <p class="timer" id="timer">
-                this is the timer
-            </p>
-        </div>
-        <div class="testDiv" id="testDiv"></div>
-        <div class="wpmDiv">
-            <p class="wpmText" id="wpm">
-                ? WPM
-            </p>
-        </div>
+        
+        <div class="flow">
+            <div class="timerDiv" >
+                <p class="timer" id="timer">
+                    this is the timer
+                </p>
+            </div>
 
-        <input 
-            type="text" 
-            class="wpmText" 
-            id="words"
-            placeholder="words">
+            <div class="generatedWordsDiv" id="generatedWordsDiv">
+                <p class="generatedWords" id="generatedWords"></p>
+            </div>
 
-        <div class="mobileButtons" onclick="generateWords()" id="generate">generate</div>
-        <div class="mobile">
-            <div class="mobileButtons" onclick="reset()" id="reset">Reset</div>
-            <div class="mobileButtons" onclick="start()" id="start">start</div>
+            <div class="wpmDiv">
+                <p class="wpmText" id="wpm">
+                    ? WPM
+                </p>
+            </div>
+
+            <div class="inputBox">
+                <input
+                    type="text" 
+                    class="wpmText" 
+                    id="words"
+                    placeholder="words">
+            </div>
+            <div class="moblieTop">
+                <div class="mobileButtons" onclick="generateWords()" id="generate">generate</div>
+                <div class="mobile">
+                    <div class="mobileButtons" onclick="reset()" id="reset">Reset</div>
+                    <div class="mobileButtons" onclick="start()" id="start">start</div>
+                </div>
+            </div>
         </div>
 
         <div class="commentDiv">
