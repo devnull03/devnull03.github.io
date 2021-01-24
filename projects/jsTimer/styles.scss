@@ -115,7 +115,6 @@ input{
 .moblieTop{
     display: flex;
     flex-direction: column;
-    // width: 100%;
 }
 .mobile {
     display: none;
@@ -143,26 +142,11 @@ div[id="generate"]{
         flex-direction: row;
         row-gap: 50px;
     }
-    // .timerDiv{
-    //     // top: $mobileTop;
-    // }
     .flow {
         margin-top: $mobileTop;
     }
-    // .wpmDiv{
-    //     top: $mobileTop + 38;
-    // }
-    // .generatedWordsDiv {
-    //     // top: $mobileTop + 20;
-    //     // width: 90%;
-    // }
-    // input{
-    //     // top: $mobileTop+ 47;
-    //     // width: 30%;
-    // }
     div[id="generate"]{
-        display: inline-block;
-        
+        display: inline-block;   
     }
 }
 
