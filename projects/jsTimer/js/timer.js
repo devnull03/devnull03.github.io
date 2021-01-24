@@ -16,31 +16,40 @@ function load() {
 document.addEventListener('keyup', event => {
     if (!(document.activeElement.nodeName == "INPUT")) {
         if (event.code === 'Space') {
-            started = !started;
-            if (!started) {
-                calculateWPM();
-                seconds = 0;
-            }
-            if (document.getElementById("testDiv").innerHTML === "") {
-                generateWords();
-            }
-
+            start();
         } else if (event.code === 'KeyR') {
-            document.getElementById("wpm").innerHTML = "? WPM";
-            document.getElementById("timer").innerHTML = "this is the timer";
-            seconds = 0;
-            started = false;
-            document.getElementById("testDiv").innerHTML = "";
+            reset();
         } else if (event.code === 'KeyT') {
             generateWords();
         }
     }    
 })
 
+function start() {
+    let startButton = document.getElementById("start");
+    started = !started;
+    startButton.innerHTML = "Stop";
+    if (!started) {
+        calculateWPM();
+        seconds = 0;
+        startButton.innerHTML = "Start";
+    }
+    if (document.getElementById("testDiv").innerHTML === "") {
+        generateWords();
+    }
+}
+function reset() {
+    document.getElementById("wpm").innerHTML = "? WPM";
+    document.getElementById("timer").innerHTML = "this is the timer";
+    seconds = 0;
+    started = false;
+    document.getElementById("testDiv").innerHTML = "";
+}
+
+
 function roundTheNumber(number) {
     return (number).toString().split(".")[0];
 }
-
 function calculateWPM() {
     var words = Number(document.getElementById("words").value);
     var wpm = words / (seconds / 60);
@@ -69,7 +78,7 @@ function generateWords() {
         randomStr = randomStr.concat(data["words"][Math.floor(Math.random() * 999)]) + " ";
     };
     if (words >= 40) {
-        document.getElementById("testDiv").style.width = "700px";
+        document.getElementById("testDiv").style.width = "70%";
     } else if (words >= 70) {
         document.getElementById("testDiv").style.width = "90%";
     } 

@@ -1,10 +1,21 @@
+html {
+  height: 98%;
+}
+
 body {
+  height: 100%;
   background-color: #e7e5e5;
   font-weight: lighter;
   font-family: "Cascadia code";
 }
 
-.testDiv, .wpmDiv, .timerDiv {
+main {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile, .testDiv, .wpmDiv, .timerDiv {
   position: absolute;
   left: 50%;
   width: 500px;
@@ -15,7 +26,7 @@ body {
   align-items: center;
 }
 
-.test, .wpmText, .timer {
+.mobileButtons, .test, .wpmText, .timer {
   justify-content: center;
   text-align: center;
   border: 2px solid white;
@@ -65,15 +76,43 @@ input {
 }
 
 .commentDiv {
+  margin-top: auto;
   display: grid;
   text-align: center;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  bottom: 0%;
   left: 50%;
   gap: 1px;
   font-size: 13px;
   color: #9e9898;
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .mobile {
+    display: flex;
+    flex-direction: row;
+    top: 75%;
+  }
+
+  .timerDiv {
+    top: 10%;
+  }
+
+  .wpmDiv {
+    top: 50%;
+  }
+
+  .testDiv {
+    top: 30%;
+    width: 90%;
+  }
+
+  input {
+    top: 60%;
+    width: 30%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
