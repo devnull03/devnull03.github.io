@@ -1,6 +1,6 @@
 $topLoc : 30%;
-$font : 'Fira Code', monospace;
-// $font : 'Cascadia code';
+// $font : 'Fira Code', monospace;
+$font : 'Cascadia code';
 
 html {
     height: 98%;
@@ -8,8 +8,8 @@ html {
 body{
     height: 100%;
     background-color: rgb(231, 229, 229);
-    font-weight: lighter;
     font-family: $font;
+    font-weight: lighter;
 }
 
 main{
@@ -107,13 +107,20 @@ input{
     display: none;
     @extend %baseDiv;
 }
-
+div[id="generate"]{
+    @extend %baseDiv;
+    display: none;
+}
 .mobileButtons{
     @extend %base-thing;
 }
 
 @media only screen and (max-device-width: 480px) {
     $mobileTop: 10%;
+    $font : 'Fira Code', monospace;
+    body {
+        font-family: $font;
+    }
     .mobile {
         display: flex;
         flex-direction: row;
@@ -123,15 +130,20 @@ input{
         top: $mobileTop;
     }
     .wpmDiv{
-        top: $mobileTop + 40;
+        top: $mobileTop + 38;
     }
     .testDiv {
         top: $mobileTop + 20;
         width: 90%;
     }
     input{
-        top: $mobileTop+ 50;
+        top: $mobileTop+ 47;
         width: 30%;
+    }
+    div[id="generate"]{
+        display: grid;
+        top: $mobileTop+ 56;
+        width: 20%;
     }
 }
 

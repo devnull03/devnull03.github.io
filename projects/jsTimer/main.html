@@ -7,6 +7,9 @@
     <title>Timer</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css">  -->
+
 </head>
 <body onload="load()">
     <script type="text/javascript" src="js/words.js"></script>
@@ -30,6 +33,7 @@
             id="words"
             placeholder="words">
 
+        <div class="mobileButtons" onclick="generateWords()" id="generate">generate</div>
         <div class="mobile">
             <div class="mobileButtons" onclick="reset()" id="reset">Reset</div>
             <div class="mobileButtons" onclick="start()" id="start">start</div>

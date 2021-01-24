@@ -5,8 +5,8 @@ html {
 body {
   height: 100%;
   background-color: #e7e5e5;
+  font-family: "Cascadia code";
   font-weight: lighter;
-  font-family: "Fira Code", monospace;
 }
 
 main {
@@ -15,7 +15,7 @@ main {
   flex-direction: column;
 }
 
-.mobile, .testDiv, .wpmDiv, .timerDiv {
+div[id=generate], .mobile, .testDiv, .wpmDiv, .timerDiv {
   position: absolute;
   left: 50%;
   width: 500px;
@@ -69,7 +69,7 @@ input {
   outline: none;
   box-sizing: border-box;
   font-weight: lighter;
-  font-family: "Fira Code", monospace;
+  font-family: "Cascadia code";
   top: 70%;
   width: 15%;
   background-color: #e7e5e5;
@@ -89,7 +89,15 @@ input {
   display: none;
 }
 
+div[id=generate] {
+  display: none;
+}
+
 @media only screen and (max-device-width: 480px) {
+  body {
+    font-family: "Fira Code", monospace;
+  }
+
   .mobile {
     display: flex;
     flex-direction: row;
@@ -101,7 +109,7 @@ input {
   }
 
   .wpmDiv {
-    top: 50%;
+    top: 48%;
   }
 
   .testDiv {
@@ -110,8 +118,14 @@ input {
   }
 
   input {
-    top: 60%;
+    top: 57%;
     width: 30%;
+  }
+
+  div[id=generate] {
+    display: grid;
+    top: 66%;
+    width: 20%;
   }
 }
 
