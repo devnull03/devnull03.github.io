@@ -22,10 +22,6 @@ main{
 }
 
 %baseDiv {
-    // position: absolute;
-    // left: 50%;
-    width: 500px;
-    // transform: translate(-50%, -50%);
     display: grid;
     gap: 15px;
     justify-content: center;
@@ -53,6 +49,7 @@ main{
 
     flex-direction: column;
     margin-top: $topLoc;
+    width: 100%
 
     // top: $topLoc + 15;
 }
