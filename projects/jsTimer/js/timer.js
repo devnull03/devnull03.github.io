@@ -51,7 +51,7 @@ function roundTheNumber(number) {
     return (number).toString().split(".")[0];
 }
 function calculateWPM() {
-    var words = Number(document.getElementById("words").value);
+    var words = Number(document.getElementById("generatedWords").innerHTML.length/5);
     var wpm = words / (seconds / 60);
     document.getElementById("wpm").innerHTML = wpm.toFixed(2) + " " + "WPM";
 }
@@ -77,14 +77,7 @@ function generateWords() {
     for (let i = 0; i < words; i++) {
         randomStr = randomStr.concat(data["words"][Math.floor(Math.random() * 999)]) + " ";
     };
-    if (words >= 40) {
-        document.getElementById("generatedWordsDiv").style.width = "70%";
-    } else if (words >= 70) {
-        document.getElementById("generatedWordsDiv").style.width = "90%";
-    } 
-
     if (words > 0) {
-        // document.getElementById("generatedWordsDiv").innerHTML = wordsElement;
         document.getElementById("generatedWords").innerHTML = randomStr;
     }
 }
