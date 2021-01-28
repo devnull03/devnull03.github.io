@@ -44,6 +44,7 @@ function reset() {
     seconds = 0;
     started = false;
     document.getElementById("generatedWords").innerHTML = "";
+    document.getElementById("words").value = "";
 }
 
 
