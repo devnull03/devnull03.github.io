@@ -9,6 +9,13 @@ body {
   font-weight: lighter;
 }
 
+img {
+  width: 70px;
+  position: fixed;
+  left: 20px;
+  top: 20px;
+}
+
 main {
   min-height: 100%;
   display: flex;
@@ -35,18 +42,39 @@ main {
   transition: transform 300ms, box-shadow 300ms;
 }
 
+.mode {
+  position: fixed;
+  left: 110px;
+  top: 40px;
+}
+
+.modeChange {
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.modeChange:hover {
+  font-weight: 300;
+}
+
+.modeInfo {
+  margin-top: 0%;
+  color: #9e9898;
+  font-size: 14px;
+}
+
 .flow {
   display: flex;
   align-self: center;
   justify-items: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 10%;
+  margin-top: 20%;
   width: 100%;
 }
 
 .timerDiv {
-  top: 10%;
+  top: 20%;
 }
 
 .timer {
@@ -112,6 +140,10 @@ div[id=generate] {
     font-family: "Fira Code", monospace;
   }
 
+  img {
+    width: 50px;
+  }
+
   .mobile {
     display: flex;
     flex-direction: row;
@@ -119,11 +151,17 @@ div[id=generate] {
   }
 
   .flow {
-    margin-top: 15%;
+    margin-top: 20%;
   }
 
   div[id=generate] {
     display: inline-block;
+  }
+
+  .mode {
+    left: 23%;
+    top: 5%;
+    font-size: smaller;
   }
 }
 
