@@ -1,4 +1,4 @@
-var data = {
+var wordsData = {
     "name": "english_1k",
     "leftToRight": true,
     "words": [
