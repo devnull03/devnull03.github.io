@@ -19,9 +19,16 @@
 </head>
 <body onload="load()">
     <script type="text/javascript" src="js/words.js"></script>
+    <script type="text/javascript" src="js/quotes.js"></script>
     <script type="text/javascript" src="js/timer.js"></script>
     <main>
-        
+        <img src="img/icon.webp" alt="icon">
+
+        <div class="mode" id="modeDiv" onclick="theTimer.changeMode()">
+            <p class="modeChange">Change Mode</p>
+            <p class="modeInfo" id="modeInfo">current: default</p>
+        </div>
+    
         <div class="flow">
             <div class="timerDiv" >
                 <p class="timer" id="timer">
@@ -47,10 +54,10 @@
                     placeholder="words">
             </div>
             <div class="moblieTop">
-                <div class="mobileButtons" onclick="generateWords()" id="generate">generate</div>
+                <div class="mobileButtons" onclick="theTimer.generateWords()" id="generate">generate</div>
                 <div class="mobile">
-                    <div class="mobileButtons" onclick="reset()" id="reset">Reset</div>
-                    <div class="mobileButtons" onclick="start()" id="start">start</div>
+                    <div class="mobileButtons" onclick="theTimer.reset()" id="reset">Reset</div>
+                    <div class="mobileButtons" onclick="theTimer.start()" id="start">start</div>
                 </div>
             </div>
         </div>
