@@ -30,6 +30,8 @@ class Timer {
         document.getElementById("generatedWords").innerHTML = "";
         document.getElementById("words").value = "";
         document.getElementById("modeInfo").innerHTML = 'current: default';
+        this.currentMode = 1;
+        this.changeMode();
     }
 
     changeMode() {
