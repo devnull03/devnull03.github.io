@@ -23,14 +23,19 @@
     <script type="text/javascript" src="js/quotes.js"></script>
     <script type="text/javascript" src="js/timer.js"></script>
     <main>
-        <img src="img/icon.webp" alt="icon">
-
-        <div class="mode" id="modeDiv" onclick="theTimer.changeMode()">
-            <p class="modeChange">Change Mode</p>
-            <p class="modeInfo" id="modeInfo">current: default</p>
-        </div>
-    
+        
         <div class="flow">
+            
+            <header>
+                <div>
+                    <img src="img/icon.webp" alt="icon">
+                </div>
+        
+                <div class="mode" id="modeDiv">
+                    <p class="modeChange" onclick="theTimer.changeMode()">Change Mode</p>
+                    <p class="modeInfo" id="modeInfo">current: default</p>
+                </div>
+            </header>
             <div class="timerDiv" >
                 <p class="timer" id="timer">
                     this is the timer
