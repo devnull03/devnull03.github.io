@@ -4,32 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
     <main>
         <div class="screen">
+            <div class="screenText" id="screenText"></div>
+        </div>
+            <div id="clear" onclick="calc.clear()">Clear</div>
+            <div id="backspace" onclick="calc.back()">Back</div>
 
-        </div>
-        <div class="numpad">
-            <div class="num" id="0">0</div>
-            <div class="num" id="1">1</div>
-            <div class="num" id="2">2</div>
-            <div class="num" id="3">3</div>
-            <div class="num" id="4">4</div>
-            <div class="num" id="5">5</div>
-            <div class="num" id="6">6</div>
-            <div class="num" id="7">7</div>
-            <div class="num" id="8">8</div>
-            <div class="num" id="9">9</div>
-        </div>
-        <div class="operations">
-            <div id="+">+</div>
-            <div id="-">-</div>
-            <div id="*">*</div>
-            <div id="/">/</div>
-            <div id="=">=</div>
-        </div>
+            <div class="operation" onclick="calc.changeOperator('/')" id="/">/</div>
+            <div class="operation" onclick="calc.changeOperator('*')" id="*">*</div>
+            <div class="operation" onclick="calc.changeOperator('-')" id="-">-</div>
+
+            <div class="num" onclick="calc.send(7)" id="7">7</div>
+            <div class="num" onclick="calc.send(8)" id="8">8</div>
+            <div class="num" onclick="calc.send(9)" id="9">9</div>
+            
+            <div class="operation" onclick="calc.changeOperator('+')" id="+">+</div>
+            <div class="num" onclick="calc.send(4)" id="4">4</div>
+            <div class="num" onclick="calc.send(5)" id="5">5</div>
+            <div class="num" onclick="calc.send(6)" id="6">6</div>
+            
+            <div class="num" onclick="calc.send(1)" id="1">1</div>
+            <div class="num" onclick="calc.send(2)" id="2">2</div>
+            <div class="num" onclick="calc.send(3)" id="3">3</div>
+            <div class="operation" onclick="calc.calculate()"id="=">=</div>
+            
+            <div class="num" onclick="calc.send(0)" id="0">0</div>
+            <div class="num" onclick="calc.send('.')" id=".">.</div>
+            
     </main>
 </body>
-</html>
+</html> 
