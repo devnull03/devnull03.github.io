@@ -1,47 +1,92 @@
 
 
-function greater(){
- 
-    let a = Number(document.getElementById("a").value) ;
-    let b = Number(document.getElementById("b").value) ;
+class Calculator{
 
-    if (a > b) {
-        document.getElementById("op").innerHTML = ">" ;
-        document.getElementById("out").innerHTML = "a is bigger" ;
-    } else {
-        document.getElementById("op").innerHTML = "<" ;
-        document.getElementById("out").innerHTML = "b is bigger" ;
-    };
-};
+    constructor() { 
+        this.currentResult = 0;
+        this.currentOperator = "+";
+        this.currentNumber = "";
+        this.operations = new Map();
+        this.operations.set('+', function (num1, num2) {
+            return Number(num1) + Number(num2)
+        });
+        this.operations.set('-', function (num1, num2) {
+            return Number(num1) - Number(num2)
+        });
+        this.operations.set('*', function (num1, num2) {
+            return Number(num1) * Number(num2)
+        });
+        this.operations.set('/', function (num1, num2) {
+            return Number(num1) / Number(num2)
+        });
+        this.screen = "";
+    }
 
-function add(){
- 
-    let a = Number(document.getElementById("a").value) ;
-    let b = Number(document.getElementById("b").value) ;
-    document.getElementById("op").innerHTML = "+" ;
-    document.getElementById("out").innerHTML = `Answer : ${a+b}` ;
-};
+    display(nextThing) {
+        this.screen = this.screen + nextThing;
+        document.getElementById("screenText").innerHTML = this.screen;
+    }
 
-function sub(){
- 
-    let a = Number(document.getElementById("a").value) ;
-    let b = Number(document.getElementById("b").value) ;
-    document.getElementById("op").innerHTML = "-" ;
-    document.getElementById("out").innerHTML = `Answer : ${a-b}` ;
-};
+    send(number) {
+        if (this.screen.length >= 17) {
+            return;
+        }
+        this.display(number);
+        this.currentNumber += number;
+        console.log(`number ${this.currentNumber}, res ${this.currentResult}`);
+    }
 
-function divide(){
- 
-    let a = Number(document.getElementById("a").value) ;
-    let b = Number(document.getElementById("b").value) ;
-    document.getElementById("op").innerHTML = "/" ;
-    document.getElementById("out").innerHTML = `Answer : ${a/b}` ;
-};
+    changeOperator(operator) {
+        if (this.screen.length >= 17) {
+            return;
+        }
+        let lastDigit = this.screen.substring(
+            this.screen.length-1, this.screen.length
+        )
+        if (operator === lastDigit) {
+            return;
+        } else if (this.screen === "") {
+            return;
+        }
 
-function multiply(){
- 
-    let a = Number(document.getElementById("a").value) ;
-    let b = Number(document.getElementById("b").value) ;
-    document.getElementById("op").innerHTML = "*" ;
-    document.getElementById("out").innerHTML = `Answer : ${a*b}` ;
-};
+        this.display(operator)
+        this.currentResult = this.operations.get(this.currentOperator)(this.currentResult, this.currentNumber);
+        this.currentOperator = operator;
+        this.currentNumber = "";
+        console.log(`number ${this.currentNumber}, res ${this.currentResult}`);
+    }
+
+    clear() {
+        this.screen = "";
+        this.currentOperator = "+";
+        this.currentNumber = "";
+        this.currentResult = 0;
+        this.display("");
+    }
+
+    back() {
+        this.screen = this.screen.substring(0, this.screen.length - 1);
+        this.currentNumber = this.currentNumber.substring(0, this.currentNumber.length - 1);
+        
+        this.display("");
+    }
+
+    calculate() {
+        let lastDigit = this.screen.substring(
+            this.screen.length-1, this.screen.length
+        )
+        if (lastDigit === this.currentOperator) {
+            return;
+        }
+        this.currentResult = this.operations.get(this.currentOperator)(this.currentResult, this.currentNumber);
+        this.screen = "";
+        this.display(this.currentResult.toString());
+        console.log(this.currentResult);
+        this.currentNumber = String(this.currentResult);
+        this.currentResult = 0;
+        this.currentOperator = "+";
+    }
+    
+}
+
+const calc = new Calculator();

@@ -1,0 +1,120 @@
+html{
+    height: 99%;
+}
+body{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fira code';
+    height: 100%;
+    background: rgb(4,0,70);
+    background: linear-gradient(328deg, rgba(4,0,70,1) 0%, rgba(9,9,121,1) 34%, rgba(0,212,255,1) 100%);
+}
+
+main{
+    // border: 2px solid #24292E;
+    // padding: 2px;
+    display: grid;
+    grid-template-areas: 
+        "screen screen screen screen"
+        "clear back divide multiply"
+        "7 8 9 minus"
+        "4 5 6 plus"
+        "1 2 3 enter"
+        "zero zero decimal enter";
+}
+
+$buttonSize:80px;
+$buttonMargin: 3px;
+
+%button{
+    height: $buttonSize;
+    width: $buttonSize;       
+    margin: $buttonMargin;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    resize: both;
+    // border: 1px solid white;
+    transition: transform 250ms;
+    user-select: none;
+}
+%button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+%button:active{
+    transform: scale(0.9);
+}
+
+$blueGrey: #24292E;
+$aquaThing: #2E8EEA;
+.num{
+    @extend %button;
+    background-color: $blueGrey;
+    color: $aquaThing;
+}
+
+$extraWidth: $buttonMargin*2;
+
+.num[id="0"]{
+    width: ($buttonSize*2) + $extraWidth;
+    // grid-column: 1 2;
+    grid-area: zero;
+}
+.operation[id="+"]{
+    height: $buttonSize;
+    grid-area: plus;
+}
+.operation[id="-"]{
+    height: $buttonSize;
+    grid-area: minus;
+}
+.operation[id="="]{
+    height: ($buttonSize*2) + $extraWidth;
+    grid-area: enter;
+}
+div[id="clear"]{
+    @extend %button;
+    // font-size: medium;
+    background-color: $blueGrey;
+    grid-area: clear;
+    color: $aquaThing;
+}
+div[id="backspace"]{
+    @extend %button;
+    // font-size: medium;
+    background-color: $blueGrey;
+    grid-area: back;
+    color: $aquaThing;
+}
+.operation{
+    @extend %button;
+    background-color: $aquaThing;
+}
+.screen{
+    height: 100px;
+    // width: fit-content;
+    position: relative;
+    margin-left: 3px;
+    margin-bottom: 3px;
+    background-color: rgb(216, 213, 213);
+    grid-area: screen;
+}
+
+.screenText{
+    content: "kfgfg";
+    text-align: right;
+    margin-right: 5px;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    font-size: 30px;
+}
+
+@for $var from 1 to 9 {
+    div[id="$var"]{
+        grid-area: "$var";
+    }
+}
