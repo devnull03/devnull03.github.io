@@ -1,0 +1,134 @@
+html {
+  height: 99%;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-family: "Fira code";
+  height: 100%;
+  background: #040046;
+  background: linear-gradient(328deg, #040046 0%, #090979 34%, #00d4ff 100%);
+}
+
+main {
+  display: grid;
+  grid-template-areas: "screen screen screen screen" "clear back divide multiply" "7 8 9 minus" "4 5 6 plus" "1 2 3 enter" "zero zero decimal enter";
+}
+
+.operation, div[id=backspace], div[id=clear], .num {
+  height: 80px;
+  width: 80px;
+  margin: 3px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  resize: both;
+  transition: transform 250ms;
+  user-select: none;
+}
+
+.operation:hover, div[id=backspace]:hover, div[id=clear]:hover, .num:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.operation:active, div[id=backspace]:active, div[id=clear]:active, .num:active {
+  transform: scale(0.9);
+}
+
+.num {
+  background-color: #24292E;
+  color: #2E8EEA;
+}
+
+.num[id="0"] {
+  width: 166px;
+  grid-area: zero;
+}
+
+.operation[id="+"] {
+  height: 80px;
+  grid-area: plus;
+}
+
+.operation[id="-"] {
+  height: 80px;
+  grid-area: minus;
+}
+
+.operation[id="="] {
+  height: 166px;
+  grid-area: enter;
+}
+
+div[id=clear] {
+  background-color: #24292E;
+  grid-area: clear;
+  color: #2E8EEA;
+}
+
+div[id=backspace] {
+  background-color: #24292E;
+  grid-area: back;
+  color: #2E8EEA;
+}
+
+.operation {
+  background-color: #2E8EEA;
+}
+
+.screen {
+  height: 100px;
+  position: relative;
+  margin-left: 3px;
+  margin-bottom: 3px;
+  background-color: #d8d5d5;
+  grid-area: screen;
+}
+
+.screenText {
+  content: "kfgfg";
+  text-align: right;
+  margin-right: 5px;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  font-size: 30px;
+}
+
+div[id="$var"] {
+  grid-area: "$var";
+}
+
+div[id="$var"] {
+  grid-area: "$var";
+}
+
+div[id="$var"] {
+  grid-area: "$var";
+}
+
+div[id="$var"] {
+  grid-area: "$var";
+}
+
+div[id="$var"] {
+  grid-area: "$var";
+}
+
+div[id="$var"] {
+  grid-area: "$var";
+}
+
+div[id="$var"] {
+  grid-area: "$var";
+}
+
+div[id="$var"] {
+  grid-area: "$var";
+}
+
+/*# sourceMappingURL=style.css.map */
