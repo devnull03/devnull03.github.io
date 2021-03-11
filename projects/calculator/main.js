@@ -90,3 +90,76 @@ class Calculator{
 }
 
 const calc = new Calculator();
+
+document.addEventListener('keyup', event => {
+    if (!(document.activeElement.nodeName == "INPUT")) {
+        console.log(event.code);
+        switch (event.code) {
+            case ('Numpad1') :
+            case ('Digit1'):
+               document.getElementById('1').click();
+                break;
+            case ('Numpad2'):
+            case ('Digit2'):
+               document.getElementById('2').click();
+                break;
+            case ('Numpad3'):
+            case ('Digit3'):
+               document.getElementById('3').click();
+                break;
+            case ('Numpad4'):
+            case ('Digit4'):
+               document.getElementById('4').click();
+                break;
+            case ('Numpad5'):
+            case ('Digit5'):
+               document.getElementById('5').click();
+                break;
+            case ('Numpad6'):
+            case ('Digit6'):
+               document.getElementById('6').click();
+                break;
+            case ('Numpad7'):
+            case ('Digit7'):
+               document.getElementById('7').click();
+                break;
+            case ('Numpad8'):
+            case ('Digit8'):
+               document.getElementById('8').click();
+                break;
+            case ('Numpad9'):
+            case ('Digit9'):
+               document.getElementById('9').click();
+                break;
+            case ('Numpad0'):
+            case ('Digit0'):
+               document.getElementById('0').click();
+                break;
+            case ('NumpadEnter'):
+            case ('Enter'):
+               document.getElementById('=').click();
+               break;
+            case ('NumpadAdd'):
+               document.getElementById('+').click();
+               break;
+            case ('NumpadSubstract'):
+            case ('Minus'):
+               document.getElementById('-').click();
+               break;
+            case ('NumpadDivide'):
+            case ('Slash'):
+               document.getElementById('/').click();
+               break;
+            case ('NumpadMultiply'):
+               document.getElementById('*').click();
+                break;
+            case ('Backspace'):
+               document.getElementById('backspace').click();
+               break;
+            case ('Escape'):
+               document.getElementById('clear').click();
+               break;
+
+       }
+    }
+});
