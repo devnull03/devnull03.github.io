@@ -1,82 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Timer</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <!-- <link rel="icon" href="https://arnav03mehta.github.io/other_links/web_icon.png" type="image/icon type"> -->
-    <link rel="icon" href="img/icon_inverted.webp" type="image/icon type">
+    <link rel="icon" href="img/icon_inverted.webp" type="image/icon type" />
 
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css">  -->
-    <meta name="description" content="A timer and word generater for you to check and improve your handwriting speed" />
-    <meta property="og:title" content="Writing Speed Test"/>
-    <meta property="og:url" content="https://arnav03mehta.github.io/projects/jsTimer/main.html"/>
-    <meta property="og:description" content="A timer and word generater for you to check and improve your handwriting speed"/>
-    <meta property="og:image" content="https://arnav03mehta.github.io/other_links/web_icon.png"/>
-
-</head>
-<body onload="load()">
+    <meta name="theme-color" content="#000000">
+    <meta
+      name="description"
+      content="A timer and word generater for you to check and improve your handwriting speed"
+    />
+    <meta property="og:title" content="Writing Speed Test" />
+    <meta
+      property="og:url"
+      content="https://arnav03mehta.github.io/projects/jsTimer/main.html"
+    />
+    <meta
+      property="og:description"
+      content="A timer and word generater for you to check and improve your handwriting speed"
+    />
+    <meta
+      property="og:image"
+      content="https://arnav03mehta.github.io/other_links/web_icon.png"
+    />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body onload="load()">
     <script type="text/javascript" src="js/words.js"></script>
     <script type="text/javascript" src="js/quotes.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <main>
-        
-        <div class="flow">
-            
-            <header>
-                <div>
-                    <img src="img/icon.webp" alt="icon">
-                </div>
-        
-                <div class="mode" id="modeDiv">
-                    <p class="modeChange" onclick="theTimer.changeMode()">Change Mode</p>
-                    <p class="modeInfo" id="modeInfo">current: default</p>
-                </div>
-            </header>
-            <div class="timerDiv" >
-                <p class="timer" id="timer">
-                    this is the timer
-                </p>
-            </div>
+      <div class="flow">
+        <header>
+          <div>
+            <img src="img/icon.webp" alt="icon" />
+          </div>
 
-            <div class="generatedWordsDiv" id="generatedWordsDiv">
-                <p class="generatedWords" id="generatedWords"></p>
-            </div>
-
-            <div class="wpmDiv">
-                <p class="wpmText" id="wpm">
-                    ? WPM
-                </p>
-            </div>
-
-            <div class="inputBox">
-                <input
-                    type="number" 
-                    class="wpmText" 
-                    id="words"
-                    placeholder="words">
-            </div>
-            <div class="moblieTop">
-                <div class="mobileButtons" onclick="theTimer.generateWords()" id="generate">generate</div>
-                <div class="mobile">
-                    <div class="mobileButtons" onclick="theTimer.reset()" id="reset">Reset</div>
-                    <div class="mobileButtons" onclick="theTimer.start()" id="start">start</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="commentDiv">
-            <p class="comments">
-                Press space to start/stop the timer <br>
-                Press r to reset everything <br>
-                Press m to change modes <br>
-                Press t to generate words after specifying the amount of words or changing the mode
+          <div class="mode" id="modeDiv">
+            <p class="modeChange" onclick="theTimer.changeMode()">
+              Change Mode
             </p>
+            <p class="modeInfo" id="modeInfo">current: default</p>
+          </div>
+        </header>
+        <div class="timerDiv">
+          <p class="timer" id="timer">this is the timer</p>
         </div>
 
+        <div class="generatedWordsDiv" id="generatedWordsDiv">
+          <p class="generatedWords" id="generatedWords"></p>
+        </div>
+
+        <div class="wpmDiv">
+          <p class="wpmText" id="wpm">? WPM</p>
+        </div>
+
+        <div class="inputBox">
+          <input type="number" class="wpmText" id="words" placeholder="words" />
+        </div>
+        <div class="moblieTop">
+          <div
+            class="mobileButtons"
+            onclick="theTimer.generateWords()"
+            id="generate"
+          >
+            generate
+          </div>
+          <div class="mobile">
+            <div class="mobileButtons" onclick="theTimer.reset()" id="reset">
+              Reset
+            </div>
+            <div class="mobileButtons" onclick="theTimer.start()" id="start">
+              start
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="commentDiv">
+        <p class="comments">
+          Press space to start/stop the timer <br />
+          Press r to reset everything <br />
+          Press m to change modes <br />
+          Press t to generate words after specifying the amount of words or
+          changing the mode
+        </p>
+      </div>
     </main>
-</body>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js");
+      }
+    </script>
+  </body>
 </html>
