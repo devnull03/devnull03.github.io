@@ -13,6 +13,7 @@
   on:click
 >
   <slot>
-    <Rogue />
+    <!-- <Rogue /> -->
+    <img src="/svg/Rogue.svg" class="object-cover w-full h-full" alt="" />
   </slot>
 </Block>

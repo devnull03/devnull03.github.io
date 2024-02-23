@@ -5,7 +5,7 @@
 </script>
 
 <Block bind:button class="{$$props.class} line-clamp-1" on:click>
-  <span class="text-[20rem] pb-5 pl-3">
+  <span class="text-[10rem] pb-5 pl-3">
     <slot>タ</slot>
   </span>
 </Block>

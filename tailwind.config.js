@@ -6,6 +6,13 @@ export default {
       fontFamily: {
         'kaisei': ['Kaisei Tokumin'],
       },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }
+      }
+
     },
   },
   plugins: [],
